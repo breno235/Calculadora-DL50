@@ -1,48 +1,135 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de DL50</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 40px auto;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        p {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        input[type="number"] {
+            width: 80px;
+            padding: 6px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .result {
+            font-weight: bold;
+            color: #28a745;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+
+    </style>
 </head>
 <body>
 
-<h1>Calculadora de DL50</h1>
+<div class="container">
+    <h1>Calculadora de DL50</h1>
 
-<p>Informe as doses e o número de afetados/total por dose:</p>
+    <p>Informe as doses e o número de afetados/total por dose:</p>
 
-<table id="doseTable">
-    <tr>
-        <th>Dose (mg/kg)</th>
-        <th>Afetados</th>
-        <th>Total</th>
-        <th>% Afetados</th>
-    </tr>
-    <tr>
-        <td><input type="number" step="any"></td>
-        <td><input type="number"></td>
-        <td><input type="number"></td>
-        <td>—</td>
-    </tr>
-    <tr>
-        <td><input type="number" step="any"></td>
-        <td><input type="number"></td>
-        <td><input type="number"></td>
-        <td>—</td>
-    </tr>
-    <tr>
-        <td><input type="number" step="any"></td>
-        <td><input type="number"></td>
-        <td><input type="number"></td>
-        <td>—</td>
-    </tr>
-    <tr>
-        <td><input type="number" step="any"></td>
-        <td><input type="number"></td>
-        <td><input type="number"></td>
-        <td>—</td>
-    </tr>
-</table>
+    <table id="doseTable">
+        <tr>
+            <th>Dose (mg/kg)</th>
+            <th>Afetados</th>
+            <th>Total</th>
+            <th>% Afetados</th>
+        </tr>
+        <tr>
+            <td><input type="number" step="any"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td>—</td>
+        </tr>
+        <tr>
+            <td><input type="number" step="any"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td>—</td>
+        </tr>
+        <tr>
+            <td><input type="number" step="any"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td>—</td>
+        </tr>
+        <tr>
+            <td><input type="number" step="any"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td>—</td>
+        </tr>
+    </table>
 
-<button onclick="calcularDL50()">Calcular DL50</button>
+    <button onclick="calcularDL50()">Calcular DL50</button>
 
-<p class="result" id="resultado"></p>
+    <p class="result" id="resultado"></p>
+</div>
 
 <script>
 function calcularDL50() {
@@ -72,12 +159,11 @@ function calcularDL50() {
     let dl50 = null;
 
     for (let i = 0; i < dados.length - 1; i++) {
-        if (dados[i].perc <= 50 && dados[i+1].perc >= 50) {
-            // Interpolação linear
+        if (dados[i].perc <= 50 && dados[i + 1].perc >= 50) {
             const x1 = dados[i].dose;
-            const x2 = dados[i+1].dose;
+            const x2 = dados[i + 1].dose;
             const y1 = dados[i].perc;
-            const y2 = dados[i+1].perc;
+            const y2 = dados[i + 1].perc;
 
             dl50 = x1 + ((50 - y1) * (x2 - x1)) / (y2 - y1);
             break;
