@@ -5,37 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de DL50</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f4f6f9;
             margin: 0;
-            padding: 20px;
-            color: #333;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
 
         .container {
-            max-width: 800px;
             background: white;
             padding: 30px;
             border-radius: 10px;
-            margin: 40px auto;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 800px;
+            text-align: center;
         }
 
         h1 {
-            text-align: center;
             color: #007bff;
+            margin-bottom: 10px;
         }
 
         p {
-            text-align: center;
             margin-bottom: 20px;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 20px;
+            margin: 0 auto 20px auto;
         }
 
         th {
@@ -67,9 +74,8 @@
             border: none;
             border-radius: 6px;
             cursor: pointer;
-            display: block;
-            margin: 0 auto;
             transition: background-color 0.3s;
+            font-size: 16px;
         }
 
         button:hover {
@@ -79,11 +85,9 @@
         .result {
             font-weight: bold;
             color: #28a745;
-            text-align: center;
             margin-top: 20px;
             font-size: 1.2em;
         }
-
     </style>
 </head>
 <body>
