@@ -1,48 +1,5 @@
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de DL50</title>
-    <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            margin: 20px;
-            background-color: #f0f8ff;
-        }
-        h1 {
-            color: #333;
-        }
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin-bottom: 20px;
-        }
-        table, th, td {
-            border: 1px solid #ccc;
-        }
-        th, td {
-            padding: 8px;
-            text-align: center;
-        }
-        input[type="number"] {
-            width: 80px;
-        }
-        button {
-            padding: 8px 16px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .result {
-            font-weight: bold;
-            color: green;
-        }
-    </style>
 </head>
 <body>
 
