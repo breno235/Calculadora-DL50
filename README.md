@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -8,7 +7,6 @@
         * {
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f4f6f9;
@@ -19,7 +17,6 @@
             align-items: center;
             min-height: 100vh;
         }
-
         .container {
             background: white;
             padding: 30px;
@@ -29,44 +26,36 @@
             max-width: 800px;
             text-align: center;
         }
-
         h1 {
             color: #007bff;
             margin-bottom: 10px;
         }
-
         p {
             margin-bottom: 20px;
         }
-
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 0 auto 20px auto;
         }
-
         th {
             background-color: #007bff;
             color: white;
         }
-
         th, td {
             border: 1px solid #ddd;
             padding: 10px;
             text-align: center;
         }
-
         tr:nth-child(even) {
             background-color: #f9f9f9;
         }
-
         input[type="number"] {
             width: 80px;
             padding: 6px;
             border: 1px solid #ccc;
             border-radius: 4px;
         }
-
         button {
             background-color: #28a745;
             color: white;
@@ -77,11 +66,9 @@
             transition: background-color 0.3s;
             font-size: 16px;
         }
-
         button:hover {
             background-color: #218838;
         }
-
         .result {
             font-weight: bold;
             color: #28a745;
@@ -96,7 +83,7 @@
     <h1>Calculadora de DL50</h1>
 
     <p>Informe as doses e o número de afetados/total por dose:</p>
-
+    
     <table id="doseTable">
         <tr>
             <th>Dose (mg/kg)</th>
